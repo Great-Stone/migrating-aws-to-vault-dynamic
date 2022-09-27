@@ -1,8 +1,8 @@
 # Load IAM and Create Vault AWS Secret Engine
 
-> Terraform CLI 1.3.0
-> Vault Server 1.11.3
-> Python 3.9.12
+> - Terraform CLI 1.3.0
+> - Vault Server 1.11.3
+> - Python 3.9.12
 
 **[ 실행 순서 ]**
 1. `boto3`를 사용하여 python에서 현재 AWS계정의 사용자에 할당된 정책 데이터를 json으로 저장
