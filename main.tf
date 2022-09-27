@@ -36,9 +36,6 @@ resource "vault_aws_secret_backend" "aws" {
 }
 
 resource "vault_aws_secret_backend_role" "role" {
-  depends_on = [
-    null_resource.policies_data
-  ]
   for_each        = local.policies_data
   backend         = vault_aws_secret_backend.aws.path
   name            = each.key
@@ -46,7 +43,7 @@ resource "vault_aws_secret_backend_role" "role" {
 
   policy_arns     = each.value.attated_policies
   iam_groups      = each.value.groups
-  policy_document = jsonencode(local.policies_data["hahohh"].user_policies)
+  policy_document = jsonencode(each.value.user_policies)
 }
 
 // output "user_id" {
