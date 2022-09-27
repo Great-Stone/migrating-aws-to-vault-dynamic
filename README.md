@@ -22,8 +22,8 @@ Default output format [None]:
 
 ## Setup & Run Python
 
-> boto3 문서 : <https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html>
-> python에 필요한 `boto3`를 설치하고 `main.py`를 실행하여 `policies_data.json` 생성
+> - boto3 문서 : <https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html>
+> - python에 필요한 `boto3`를 설치하고 `main.py`를 실행하여 `policies_data.json` 생성
 
 ```bash
 pip install boto3
@@ -35,10 +35,10 @@ python ./script/main.py
 
 ## Run Terraform
 
-> 실행위치에 AWS 자격증명이 선언되었으므로 (`~/.aws/credentials`) aws 프로바이더에 따로 설정은 필요하지 않음
-> `vault_addr` 입력 변수에 사용하는 Vault 서버의 주소 설정 필요
-> vault 프로바이더에 vault에 AWS Secret Engine 활성화 및 구성가능한 자격증명 구성해야 필요
-> `vault_aws_secret_backend`에서는 Vault가 AWS에 iam_user를 생성가능한 `access_key`와 `secret_key`를 설정 필요
+> - 실행위치에 AWS 자격증명이 선언되었으므로 (`~/.aws/credentials`) aws 프로바이더에 따로 설정은 필요하지 않음
+> - `vault_addr` 입력 변수에 사용하는 Vault 서버의 주소 설정 필요
+> - vault 프로바이더에 vault에 AWS Secret Engine 활성화 및 구성가능한 자격증명 구성해야 필요
+> - `vault_aws_secret_backend`에서는 Vault가 AWS에 iam_user를 생성가능한 `access_key`와 `secret_key`를 설정 필요
 
 ```bash
 $ terraform apply
