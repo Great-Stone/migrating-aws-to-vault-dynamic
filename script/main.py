@@ -10,6 +10,8 @@ users = iam_client.list_users(MaxItems = 1000)['Users']
 
 for user in users:
   name = user['UserName']
+  if name.startswith('vault-'):
+    continue
   policy_info = {}
   attated_policies = []
   groups = []
